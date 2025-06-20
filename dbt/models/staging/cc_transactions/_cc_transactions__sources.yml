@@ -1,0 +1,66 @@
+version: 2
+
+sources:
+  - name: transactions_raw
+    description: Raw credit card transactions data loaded from S3 into Snowflake. 
+    database: cc_transactions_db
+    schema: raw
+
+    tables:
+      - name: transactions_raw
+        description: Contains raw, unprocessed credit card transaction records.
+        columns:
+          - name: trans_date_trans_time
+            description: Date and time of the transaction in format 'YYYY-MM-DD HH:mm:ss'.
+          - name: cc_num
+            description: Credit card number.
+          - name: merchant
+            description: Name of the merchant.
+          - name: category
+            description: Merchant category.
+          - name: amt
+            description: Transaction amount in USD.
+            data_tests:
+              - not_null
+          - name: first
+            description: First name of the cardholder.
+          - name: last
+            description: Last name of the cardholder.
+          - name: gender
+            description: Gender of the cardholder ('M' for male, 'F' for female).
+          - name: street
+            description: Street of the cardholder's address.
+          - name: city
+            description: City of the cardholder's address.
+          - name: state
+            description: State of the cardholder's address.
+          - name: zip
+            description: Zip code of the cardholder's address.
+          - name: lat
+            description: Latitude of the cardholder's address.    
+          - name: long
+            description: Longitude of the cardholder's address.
+          - name: city_pop
+            description: City population of the cardholder's address.
+          - name: job
+            description: Job of the cardholder.
+          - name: dob
+            description: Date of birth of the cardholder.
+            data_tests:
+              - not_null
+          - name: trans_num
+            description: Transaction number.
+            data_tests:
+              - unique
+              - not_null
+          - name: unix_time
+            description: Unix time of the transaction.
+          - name: merch_lat
+            description: Latitude of the merchant's address.
+          - name: merch_lon
+            description: Longitude of the merchant's address.
+          - name: is_fraud
+            description: Indicates the transaction was a fraudulent (0 = no, 1 = yes).
+            data_tests:
+              - accepted_values:
+                  values: [0, 1]
