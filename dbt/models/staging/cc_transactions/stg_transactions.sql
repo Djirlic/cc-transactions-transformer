@@ -19,5 +19,5 @@ SELECT
 	merch_lat as merchant_latitude,
 	merch_long as merchant_longitude,
 	cast(is_fraud as boolean) as is_fraud,
-	trans_date_trans_time as transaction_timestamp
+	to_timestamp_ntz(trans_date_trans_time / 1000000) as transaction_timestamp
 FROM {{ source('raw', 'transactions_raw') }}
