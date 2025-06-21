@@ -21,3 +21,5 @@ SELECT
 	cast(is_fraud as boolean) as is_fraud,
 	to_timestamp_ntz(trans_date_trans_time / 1000000) as transaction_timestamp
 FROM {{ source('raw', 'transactions_raw') }}
+WHERE amt >= 0
+AND dob < CURRENT_DATE()
