@@ -1,5 +1,5 @@
 SELECT
-    cc_num,
+    cast(cc_num as string) as cc_number,
 	merchant,
 	category,
 	amt as amount,
@@ -9,7 +9,7 @@ SELECT
 	street,
 	city,
 	state,
-	zip as zip_code,
+	cast(zip as string) as zip_code,
 	lat as latitude,
 	long as longitude,
 	city_pop as city_population,
@@ -18,6 +18,6 @@ SELECT
 	trans_num as transaction_number,
 	merch_lat as merchant_latitude,
 	merch_long as merchant_longitude,
-	is_fraud,
+	cast(is_fraud as boolean) as is_fraud,
 	trans_date_trans_time as transaction_timestamp
 FROM {{ source('raw', 'transactions_raw') }}
