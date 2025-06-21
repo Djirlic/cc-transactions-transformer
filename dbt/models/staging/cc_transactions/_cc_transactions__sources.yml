@@ -11,7 +11,7 @@ sources:
         description: Contains raw, unprocessed credit card transaction records.
         columns:
           - name: trans_date_trans_time
-            description: Date and time of the transaction in format 'YYYY-MM-DD HH:mm:ss'.
+            description: Date and time of the transaction in format as Unix time in microseconds since Unix epoch.
           - name: cc_num
             description: Credit card number.
           - name: merchant
@@ -57,7 +57,7 @@ sources:
             description: Unix time of the transaction.
           - name: merch_lat
             description: Latitude of the merchant's address.
-          - name: merch_lon
+          - name: merch_long
             description: Longitude of the merchant's address.
           - name: is_fraud
             description: Indicates the transaction was a fraudulent (0 = no, 1 = yes).
