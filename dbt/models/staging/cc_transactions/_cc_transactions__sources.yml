@@ -1,7 +1,7 @@
 version: 2
 
 sources:
-  - name: transactions_raw
+  - name: raw
     description: Raw credit card transactions data loaded from S3 into Snowflake. 
     database: cc_transactions_db
     schema: raw

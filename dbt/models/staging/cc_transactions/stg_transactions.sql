@@ -1,0 +1,23 @@
+SELECT
+    cc_num,
+	merchant,
+	category,
+	amt as amount,
+	first as first_name,
+	last as last_name,
+	gender,
+	street,
+	city,
+	state,
+	zip as zip_code,
+	lat as latitude,
+	long as longitude,
+	city_pop as city_population,
+	job,
+	dob as date_of_birth,
+	trans_num as transaction_number,
+	merch_lat as merchant_latitude,
+	merch_long as merchant_longitude,
+	is_fraud,
+	trans_date_trans_time as transaction_timestamp
+FROM {{ source('raw', 'transactions_raw') }}
