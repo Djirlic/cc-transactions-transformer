@@ -11,6 +11,8 @@ models:
       - name: category
         description: Business category of the merchant.
       - name: amount
+        data_tests:
+          - not_null
         description: Transaction amount in USD.
       - name: first_name
         description: First name of the cardholder.
@@ -24,25 +26,44 @@ models:
         description: City of the cardholder's address.
       - name: state
         description: US state abbreviation of the cardholder's address.
+        data_tests:
+          - not_null
       - name: zip_code
         description: Zip code of the cardholder's address.
       - name: latitude
         description: Latitude of the cardholder's location.
+        data_tests:
+          - not_null
       - name: longitude
         description: Longitude of the cardholder's location.
+        data_tests:
+          - not_null
       - name: city_population
         description: Population of the cardholder's city.
       - name: job
         description: Job title of the cardholder.
       - name: date_of_birth
         description: Date of birth of the cardholder.
+        data_tests:
+          - not_null
       - name: transaction_number
         description: Unique transaction identifier.
+        data_tests:
+          - unique
+          - not_null
       - name: merchant_latitude
         description: Latitude of the merchant's location.
+        data_tests:
+          - not_null
       - name: merchant_longitude
         description: Longitude of the merchant's location.
+        data_tests:
+          - not_null
       - name: is_fraud
         description: Boolean flag indicating whether the transaction was fraudulent.
+        data_tests:
+          - not_null
       - name: transaction_timestamp
         description: Timestamp when the transaction occurred, derived from raw microsecond field.
+        data_tests:
+          - not_null
