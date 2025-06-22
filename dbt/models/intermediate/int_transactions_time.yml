@@ -1,0 +1,30 @@
+version: 2
+
+models:
+  - name: int_transactions_time
+    description: >
+      Adds temporal features to each transaction based on the transaction timestamp:
+      date, hour, weekday, and derived flags for weekend and night transactions.
+    columns:
+      - name: transaction_date
+        description: The date part of the transaction timestamp.
+        data_tests:
+          - not_null
+      - name: transaction_hour
+        description: Hour of the transaction (0–23).
+        data_tests:
+          - not_null
+      - name: transaction_weekday
+        description: "{{ doc('transaction_weekday') }}"
+        data_tests:
+          - not_null
+          - accepted_values:
+              values: ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"]
+      - name: is_weekend
+        description: Boolean indicating whether the transaction occurred on a weekend.
+        data_tests:
+          - not_null
+      - name: is_night_transaction
+        description: Boolean indicating whether the transaction occurred during the night (before 6 AM or after 10 PM).
+        data_tests:
+          - not_null
