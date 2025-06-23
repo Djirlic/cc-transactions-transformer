@@ -7,11 +7,11 @@ models:
       date, hour, weekday, and derived flags for weekend and night transactions.
     columns:
       - name: transaction_date
-        description: The date part of the transaction timestamp.
+        description: "{{ doc('transaction_date') }}"
         data_tests:
           - not_null
       - name: transaction_hour
-        description: Hour of the transaction (0-23).
+        description: "{{ doc('transaction_hour') }}"
         data_tests:
           - not_null
       - name: transaction_weekday
@@ -21,10 +21,10 @@ models:
           - accepted_values:
               values: ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"]
       - name: is_weekend
-        description: Boolean indicating whether the transaction occurred on a weekend.
+        description: "{{ doc('is_weekend') }}"
         data_tests:
           - not_null
       - name: is_night_transaction
-        description: Boolean indicating whether the transaction occurred during the night (before 6 AM or after 10 PM).
+        description: "{{ doc('is_night_transaction') }}"
         data_tests:
           - not_null

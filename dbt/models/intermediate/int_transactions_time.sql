@@ -1,4 +1,5 @@
 SELECT
+    transaction_number,
     date(transaction_timestamp) as transaction_date,
     date_part('hour', transaction_timestamp) as transaction_hour,
     to_varchar(transaction_timestamp, 'DY') AS transaction_weekday,

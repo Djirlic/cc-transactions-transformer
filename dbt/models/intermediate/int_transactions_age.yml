@@ -5,6 +5,6 @@ models:
     description: Adds the cardholder's age (in years) during the transaction by comparing date_of_birth to transaction_timestamp.
     columns:
       - name: cardholder_age_at_transaction
-        description: Age of cardholder (in full years) at the time of transaction.
+        description: "{{ doc('cardholder_age_at_transaction') }}"
         data_tests:
           - not_null

@@ -1,4 +1,5 @@
 SELECT
+    transaction_number,
     case
         when dateadd(year, datediff(year, date_of_birth, transaction_timestamp), date_of_birth) > transaction_timestamp
             then datediff(year, date_of_birth, transaction_timestamp) - 1
