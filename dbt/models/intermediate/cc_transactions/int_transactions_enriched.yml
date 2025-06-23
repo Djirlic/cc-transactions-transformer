@@ -1,8 +1,11 @@
 version: 2
 
 models:
-  - name: stg_transactions
-    description: One unique cleaned transaction per row. Trimmed strings, renamed fields, and invalid values removed (e.g. negative amounts, future dates of birth).
+  - name: int_transactions_enriched
+    description:  >
+       Intermediate model that enriches each transaction with additional derived fields such as 
+       transaction date, hour, weekday, weekend/night indicators, and cardholder age at the time of transaction. 
+       This model prepares the data for downstream analytical use in the silver layer by combining temporal and demographic context.
     columns:
       - name: cc_number
         description: "{{ doc('cc_number') }}"
@@ -65,5 +68,31 @@ models:
           - not_null
       - name: transaction_timestamp
         description: "{{ doc('transaction_timestamp') }}"
+        data_tests:
+          - not_null
+      - name: transaction_date
+        description: "{{ doc('transaction_date') }}"
+        data_tests:
+          - not_null
+      - name: transaction_hour
+        description: "{{ doc('transaction_hour') }}"
+        data_tests:
+          - not_null
+      - name: transaction_weekday
+        description: "{{ doc('transaction_weekday') }}"
+        data_tests:
+          - not_null
+          - accepted_values:
+              values: ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"]
+      - name: is_weekend
+        description: "{{ doc('is_weekend') }}"
+        data_tests:
+          - not_null
+      - name: is_night_transaction
+        description: "{{ doc('is_night_transaction') }}"
+        data_tests:
+          - not_null
+      - name: cardholder_age_at_transaction
+        description: "{{ doc('cardholder_age_at_transaction') }}"
         data_tests:
           - not_null
