@@ -11,7 +11,7 @@ models:
         data_tests:
           - not_null
       - name: transaction_hour
-        description: Hour of the transaction (0–23).
+        description: Hour of the transaction (0-23).
         data_tests:
           - not_null
       - name: transaction_weekday
