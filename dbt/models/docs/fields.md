@@ -117,3 +117,18 @@ Boolean indicating whether the transaction occurred during the night (before 6 A
 {% docs cardholder_age_at_transaction %}
 Age of cardholder (in full years) at the time of transaction.
 {% enddocs %}
+
+{% docs age_group %}
+    
+One of the following age groups: 
+
+| age group   |
+|----------------|
+| <18           |
+| 18-25          |
+| 26-35          |
+| 36-50          |
+| 51-65          |
+| \>66           |
+
+{% enddocs %}
