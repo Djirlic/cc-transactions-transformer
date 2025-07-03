@@ -1,3 +1,68 @@
+{% docs state_abbr %}
+    
+2-letter state abbreviation from GeoJSON:
+
+| abbreviation  | state                                          |
+|---------------|------------------------------------------------|
+| WV            | West Virginia                                  |
+| FL            | Florida                                        |
+| IL            | Illinois                                       |
+| MN            | Minnesota                                      |
+| MD            | Maryland                                       |
+| RI            | Rhode Island                                   |
+| ID            | Idaho                                          |
+| NH            | New Hampshire                                  |
+| NC            | North Carolina                                 |
+| VT            | Vermont                                        |
+| CT            | Connecticut                                    |
+| DE            | Delaware                                       |
+| NM            | New Mexico                                     |
+| CA            | California                                     |
+| NJ            | New Jersey                                     |
+| WI            | Wisconsin                                      |
+| OR            | Oregon                                         |
+| NE            | Nebraska                                       |
+| PA            | Pennsylvania                                   |
+| WA            | Washington                                     |
+| LA            | Louisiana                                      |
+| GA            | Georgia                                        |
+| AL            | Alabama                                        |
+| UT            | Utah                                           |
+| OH            | Ohio                                           |
+| TX            | Texas                                          |
+| CO            | Colorado                                       |
+| SC            | South Carolina                                 |
+| OK            | Oklahoma                                       |
+| TN            | Tennessee                                      |
+| WY            | Wyoming                                        |
+| HI            | Hawaii                                         |
+| ND            | North Dakota                                   |
+| KY            | Kentucky                                       |
+| VI            | United States Virgin Islands                   |
+| MP            | Commonwealth of the Northern Mariana Islands   |
+| GU            | Guam                                           |
+| ME            | Maine                                          |
+| NY            | New York                                       |
+| NV            | Nevada                                         |
+| AK            | Alaska                                         |
+| AS            | American Samoa                                 |
+| MI            | Michigan                                       |
+| AR            | Arkansas                                       |
+| MS            | Mississippi                                    |
+| MO            | Missouri                                       |
+| MT            | Montana                                        |
+| KS            | Kansas                                         |
+| IN            | Indiana                                        |
+| PR            | Puerto Rico                                    |
+| SD            | South Dakota                                   |
+| MA            | Massachusetts                                  |
+| VA            | Virginia                                       |
+| DC            | District of Columbia                           |
+| IA            | Iowa                                           |
+| AZ            | Arizona                                        |
+
+{% enddocs %}
+
 {% docs transaction_weekday %}
     
 3-letter day abbreviation from the timestamp: 

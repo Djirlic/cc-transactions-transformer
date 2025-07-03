@@ -1,0 +1,15 @@
+version: 2
+
+sources:
+  - name: raw
+    description: Raw data loaded from S3 into Snowflake. 
+    database: cc_transactions_db
+    schema: raw
+
+    tables:
+      - name: geospatial_raw
+        columns:
+          - name: geospatial_info
+            description: The GeoJSON of the US states as type Variant.
+            data_tests:
+              - not_null
