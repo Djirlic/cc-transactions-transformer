@@ -1,6 +1,6 @@
 {% docs state_abbr %}
     
-2-letter state abbreviation from GeoJSON:
+2-letter state abbreviation from U.S. states from GeoJSON:
 
 | abbreviation  | state                                          |
 |---------------|------------------------------------------------|
@@ -196,4 +196,8 @@ One of the following age groups:
 | 51-65          |
 | \>66           |
 
+{% enddocs %}
+
+{% docs merchant_state %}
+Name of the U.S. state derived from the merchant's geographic coordinates.
 {% enddocs %}

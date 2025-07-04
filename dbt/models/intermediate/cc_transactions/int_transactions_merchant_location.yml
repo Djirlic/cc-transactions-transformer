@@ -1,0 +1,22 @@
+version: 2
+
+models:
+  - name: int_transactions_merchant_location
+    description: >
+      Adds merchant location details by identifying the U.S. state of the merchant
+      through a spatial join with official state boundaries.
+    columns:
+      - name: transaction_number
+        description: "{{ doc('transaction_number') }}"
+        data_tests:
+          - not_null
+          - unique
+      - name: merchant_state
+        description: "{{ doc('merchant_state') }}"
+        data_tests:
+          - not_null
+      - name: merchant_state_abbr
+        description: >
+          Two-letter abbreviation of the U.S. state in which the merchant is located.
+        data_tests:
+          - not_null
