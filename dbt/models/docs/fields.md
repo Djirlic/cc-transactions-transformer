@@ -199,5 +199,15 @@ One of the following age groups:
 {% enddocs %}
 
 {% docs merchant_state %}
-Name of the U.S. state derived from the merchant's geographic coordinates.
+Name of the U.S. state derived from the merchant's geographic coordinates. 
+'Unknown' if there was no matching state.
+{% enddocs %}
+
+{% docs merchant_state_abbr %}
+Two-letter abbreviation of the U.S. state in which the merchant is located.
+'UNK' if there was no matching state.
+{% enddocs %}
+
+{% docs is_merchant_location_valid %}
+Boolean flag indicating whether the merchant's location matched a known US state.
 {% enddocs %}

@@ -12,11 +12,10 @@ models:
           - not_null
           - unique
       - name: merchant_state
-        description: "{{ doc('merchant_state') }}"
-        data_tests:
-          - not_null
+        description: > 
+          Name of the U.S. state derived from the merchant's geographic coordinates. 
+          Could be NULL if no U.S. state matched.
       - name: merchant_state_abbr
-        description: >
+        description: > 
           Two-letter abbreviation of the U.S. state in which the merchant is located.
-        data_tests:
-          - not_null
+          Could be NULL if no U.S. state matched.
