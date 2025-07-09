@@ -96,3 +96,18 @@ models:
         description: "{{ doc('cardholder_age_at_transaction') }}"
         data_tests:
           - not_null
+      - name: merchant_state
+        description: "{{ doc('merchant_state') }}"
+        data_tests:
+          - not_null
+      - name: merchant_state_abbr
+        description: "{{ doc('merchant_state_abbr') }}"
+        data_tests:
+          - not_null
+      - name: is_merchant_location_valid
+        description: "{{ doc('is_merchant_location_valid') }}"
+        data_tests:
+          - not_null
+          - accepted_values:
+              values: [true, false]
+              quote: false

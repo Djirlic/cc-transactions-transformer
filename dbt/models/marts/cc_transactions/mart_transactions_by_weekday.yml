@@ -1,0 +1,39 @@
+version: 2
+
+models:
+  - name: mart_transactions_by_weekday_group
+    description: >
+      Aggregated view of transactions and fraud metrics grouped by weekday. 
+      Includes transaction counts, fraud ratios, and monetary values.
+    columns:
+      - name: weekday_group
+        description: "{{ doc('transaction_weekday')}}"
+        data_tests:
+          - not_null
+          - unique
+          - accepted_values:
+              values: ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"]
+      - name: total_transactions
+        description: The total number of transactions for the given weekday.
+        data_tests:
+          - not_null
+      - name: fraudulent_transactions
+        description: Total number of fraudulent transactions for the given weekday.
+        data_tests:
+          - not_null
+      - name: total_amount
+        description: Total transaction amount in USD for the given weekday.
+        data_tests:
+          - not_null
+      - name: fraud_amount
+        description: Fraud transaction amount in USD for the given weekday.
+        data_tests:
+          - not_null
+      - name: fraud_rate
+        description: The ratio of fraud transactions to total transactions for the weekday.
+        data_tests:
+          - not_null
+      - name: avg_fraud_amount_per_transaction
+        description: Calculated as total fraud amount divided by number of fraud transactions. Nulls are replaced by 0.
+        data_tests:
+          - not_null

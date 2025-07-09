@@ -1,0 +1,39 @@
+version: 2
+
+models:
+  - name: mart_transactions_day_vs_night
+    description: >
+      Aggregated view of transactions and fraud metrics grouped by time of the day (day or night). 
+      Includes transaction counts, fraud ratios, and monetary values.
+    columns:
+      - name: is_night_transaction
+        description: true if the transaction was between 10PM and 6 AM, false otherwise.
+        data_tests:
+          - not_null
+          - unique
+          - accepted_values:
+              values: [true, false]
+      - name: total_transactions
+        description: The total number of transactions for day or night.
+        data_tests:
+          - not_null
+      - name: fraudulent_transactions
+        description: Total number of fraudulent transactions for day or night.
+        data_tests:
+          - not_null
+      - name: total_amount
+        description: Total transaction amount in USD for day or night.
+        data_tests:
+          - not_null
+      - name: fraud_amount
+        description: Fraud transaction amount in USD for day or night.
+        data_tests:
+          - not_null
+      - name: fraud_rate
+        description: The ratio of fraud transactions to total transactions for day or night.
+        data_tests:
+          - not_null
+      - name: avg_fraud_amount_per_transaction
+        description: Calculated as total fraud amount divided by number of fraud transactions. Nulls are replaced by 0.
+        data_tests:
+          - not_null

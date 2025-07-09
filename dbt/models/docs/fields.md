@@ -1,3 +1,68 @@
+{% docs state_abbr %}
+    
+2-letter state abbreviation from U.S. states from GeoJSON:
+
+| abbreviation  | state                                          |
+|---------------|------------------------------------------------|
+| WV            | West Virginia                                  |
+| FL            | Florida                                        |
+| IL            | Illinois                                       |
+| MN            | Minnesota                                      |
+| MD            | Maryland                                       |
+| RI            | Rhode Island                                   |
+| ID            | Idaho                                          |
+| NH            | New Hampshire                                  |
+| NC            | North Carolina                                 |
+| VT            | Vermont                                        |
+| CT            | Connecticut                                    |
+| DE            | Delaware                                       |
+| NM            | New Mexico                                     |
+| CA            | California                                     |
+| NJ            | New Jersey                                     |
+| WI            | Wisconsin                                      |
+| OR            | Oregon                                         |
+| NE            | Nebraska                                       |
+| PA            | Pennsylvania                                   |
+| WA            | Washington                                     |
+| LA            | Louisiana                                      |
+| GA            | Georgia                                        |
+| AL            | Alabama                                        |
+| UT            | Utah                                           |
+| OH            | Ohio                                           |
+| TX            | Texas                                          |
+| CO            | Colorado                                       |
+| SC            | South Carolina                                 |
+| OK            | Oklahoma                                       |
+| TN            | Tennessee                                      |
+| WY            | Wyoming                                        |
+| HI            | Hawaii                                         |
+| ND            | North Dakota                                   |
+| KY            | Kentucky                                       |
+| VI            | United States Virgin Islands                   |
+| MP            | Commonwealth of the Northern Mariana Islands   |
+| GU            | Guam                                           |
+| ME            | Maine                                          |
+| NY            | New York                                       |
+| NV            | Nevada                                         |
+| AK            | Alaska                                         |
+| AS            | American Samoa                                 |
+| MI            | Michigan                                       |
+| AR            | Arkansas                                       |
+| MS            | Mississippi                                    |
+| MO            | Missouri                                       |
+| MT            | Montana                                        |
+| KS            | Kansas                                         |
+| IN            | Indiana                                        |
+| PR            | Puerto Rico                                    |
+| SD            | South Dakota                                   |
+| MA            | Massachusetts                                  |
+| VA            | Virginia                                       |
+| DC            | District of Columbia                           |
+| IA            | Iowa                                           |
+| AZ            | Arizona                                        |
+
+{% enddocs %}
+
 {% docs transaction_weekday %}
     
 3-letter day abbreviation from the timestamp: 
@@ -116,4 +181,33 @@ Boolean indicating whether the transaction occurred during the night (before 6 A
 
 {% docs cardholder_age_at_transaction %}
 Age of cardholder (in full years) at the time of transaction.
+{% enddocs %}
+
+{% docs age_group %}
+    
+One of the following age groups: 
+
+| age group   |
+|----------------|
+| <18           |
+| 18-25          |
+| 26-35          |
+| 36-50          |
+| 51-65          |
+| \>66           |
+
+{% enddocs %}
+
+{% docs merchant_state %}
+Name of the U.S. state derived from the merchant's geographic coordinates. 
+'Unknown' if there was no matching state.
+{% enddocs %}
+
+{% docs merchant_state_abbr %}
+Two-letter abbreviation of the U.S. state in which the merchant is located.
+'UNK' if there was no matching state.
+{% enddocs %}
+
+{% docs is_merchant_location_valid %}
+Boolean flag indicating whether the merchant's location matched a known US state.
 {% enddocs %}

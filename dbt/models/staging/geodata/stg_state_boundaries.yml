@@ -1,0 +1,22 @@
+version: 2
+
+models:
+  - name: stg_state_boundaries
+    description: > 
+      One unique cleaned US state per row. Trimmed strings for state name and abbreviation extracted from JSON
+      and GeoJSON coordinates parsed to Geography type.
+    columns:
+      - name: state_name
+        description: The name of the US state.
+        data_tests:
+          - not_null
+          - unique
+      - name: state_abbr
+        description: "{{ doc('state_abbr') }}"
+        data_tests:
+          - not_null
+          - unique
+      - name: geography
+        description: Geography object of the US state.
+        data_tests:
+          - not_null
