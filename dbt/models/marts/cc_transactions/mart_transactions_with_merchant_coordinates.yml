@@ -1,0 +1,24 @@
+version: 2
+
+models:
+  - name: mart_transactions_with_merchant_coordinates
+    description:  >
+       Latitude and longitude of all transactions and classification if it was a fraudulent transaction.
+    columns:
+      - name: transaction_number
+        description: "{{ doc('transaction_number') }}"
+        data_tests:
+          - unique
+          - not_null
+      - name: merchant_latitude
+        description: "{{ doc('merchant_latitude') }}"
+        data_tests:
+          - not_null
+      - name: merchant_longitude
+        description: "{{ doc('merchant_longitude') }}"
+        data_tests:
+          - not_null
+      - name: is_fraud
+        description: "{{ doc('is_fraud') }}"
+        data_tests:
+          - not_null
